@@ -116,16 +116,15 @@ items.map(item => <button key={item} onClick={() => handleItemClick(item)}>{item
 ```
 ---
 
-## 7. Best Practices
+## 5. Best Practices
 
 - Use `useCallback` for functions passed to memoized children.
 - Keep dependency arrays minimal and correct.
 - Combine with `useMemo` if you also need to memoize the result of the function.
 
 
-# ✅ useCallback & useMemo Best Practices Example
+# useCallback & useMemo Best Practices Example
 
-## 1. Use `useCallback` for functions passed to memoized children
 ```jsx
 const increment = useCallback(() => {
   setCount(prev => prev + 1);
@@ -144,7 +143,7 @@ const computedValue = useMemo(() => {
 
 ---
 
-## 8. Additional Resources
+## 6. Additional Resources
 
 - [React Docs: useCallback](https://react.dev/reference/react/useCallback)
 - [React Docs: Optimizing Performance](https://react.dev/learn/optimizing-performance)
