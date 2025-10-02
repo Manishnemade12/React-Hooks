@@ -121,7 +121,7 @@ const memoizedHandler = useCallback(() => {
 // 5. Comment when intentionally omitting dependencies
 const value = useMemo(() => compute(), []); // intentional: only once
 
-
+```
 ---
 
 ## 8. Additional Resources
