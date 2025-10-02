@@ -40,46 +40,6 @@ function Counter() {
 
 ---
 
-## 🔹 Core Hooks
-
-### 1. `useState`
-
-* Adds state to a functional component.
-* Returns `[value, updater]`.
-
-```jsx
-const [name, setName] = useState('John');
-```
-
-### 2. `useEffect`
-
-* Manages **side effects** (e.g., fetching data, timers, subscriptions).
-* Runs after render.
-
-```jsx
-useEffect(() => {
-  console.log('Component mounted');
-  return () => console.log('Cleanup when unmounted');
-}, []);
-```
-
-### 3. `useContext`
-
-* Accesses context values directly without nested consumers.
-
-### 4. `useReducer`
-
-* Manages complex state transitions (alternative to `useState`).
-
-### 5. `useMemo`
-
-* Optimize performance by memoizing values and functions.
-  
-### 6. `useRef`
-
-* Stores mutable values that don’t cause re-renders.
-* Commonly used for accessing DOM nodes.
-
 
 ---
 
@@ -102,16 +62,7 @@ useEffect(() => {
 
 ---
 
----
 
-## 🔹 When to Use Hooks
-
-* Need to manage **state** in a functional component.
-* Need to perform **side effects** (fetch, timer, DOM updates).
-* Want to **reuse logic** across multiple components.
-* Want **cleaner code** with fewer files/classes.
-
----
 
 ---
 
