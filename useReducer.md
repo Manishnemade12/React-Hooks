@@ -115,7 +115,7 @@ dispatch({ type: 'loseLife' });
 ---
 
 
-## 8. Best Practices
+## 4. Best Practices
 
 - Keep the reducer pure (no side effects inside it).
 - Use action objects with type and optional payload.
