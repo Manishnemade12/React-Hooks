@@ -2,20 +2,6 @@
 
 > A detailed guide on React's `useEffect` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
----
-
-## Table of Contents
-
-1. [What is useEffect](#what-is-useeffect)
-2. [How useEffect Works & Rendering Impact](#how-useeffect-works--rendering-impact)
-3. [Syntax and Common Patterns](#syntax-and-common-patterns)
-4. [Real-World Applications](#real-world-applications)
-5. [Cleanup Functions](#cleanup-functions)
-6. [Common Pitfalls & Fixes](#common-pitfalls--fixes)
-7. [Performance Considerations](#performance-considerations)
-8. [Best Practices](#best-practices)
-
----
 
 ## What is useEffect?
 
@@ -145,33 +131,40 @@ Always return a cleanup function for:
 
 This prevents memory leaks and ensures effects don’t duplicate work.
 
----
-
-## Common Pitfalls & Fixes
-
-* **Infinite Loops:** Avoid updating state unconditionally in an effect without proper dependencies.
-* **Stale Closures:** Always include dependencies to avoid referencing outdated values.
-* **Missing Cleanup:** Always clean up subscriptions or timers to prevent leaks.
-* **Object/Array Dependencies:** Use `useMemo` to prevent unnecessary effect runs.
-
----
-
-## Performance Considerations
-
-* Minimize dependencies to essential values.
-* Avoid heavy synchronous work inside effects.
-* Memoize expensive values/functions using `useMemo` or `useCallback`.
-* Use conditional logic inside effects to skip unnecessary work.
-
----
 
 ## Best Practices
 
 * Include all external values in dependency arrays.
+```jsx
+useEffect(() => {
+  console.log(userId);
+}, [userId]); // include external values
+
+```
+
 * Use cleanup functions for subscriptions and timers.
+```jsx
+  useEffect(() => {
+  const id = setInterval(() => {}, 1000);
+  return () => clearInterval(id); // cleanup
+}, []);
+
+```
+
 * Use `useLayoutEffect` only when you need synchronous DOM measurements.
+```jsx
+  useLayoutEffect(() => {
+  const w = ref.current.offsetWidth;
+}, []);
+
+```
+
 * Convert repeated/complex effects into custom hooks.
-* Comment when intentionally omitting ESLint `exhaustive-deps` rules.
-* Use `AbortController` to cancel fetch requests if needed.
+```jsx
+function useFetch(url) { /* logic */ }
+const data = useFetch("/api");
+
+```
+
 
 ---
