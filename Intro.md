@@ -41,7 +41,6 @@ function Counter() {
 ---
 
 
----
 
 ## 🔹 Pros of Hooks
 
@@ -62,9 +61,6 @@ function Counter() {
 
 ---
 
-
-
----
 
 ## 🔹 Basic Hooks
 
