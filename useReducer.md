@@ -117,11 +117,6 @@ dispatch({ type: 'loseLife' });
 
 ## 4. Best Practices
 
-- Keep the reducer pure (no side effects inside it).
-- Use action objects with type and optional payload.
-- Centralize related state updates into one reducer.
-- Combine with `useContext` for global state management.
-
 
 ```jsx
 // 1. Keep reducer pure & centralized
