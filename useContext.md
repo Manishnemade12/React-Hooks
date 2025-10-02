@@ -148,7 +148,6 @@ const removeItem = (id) => setCartItems(cartItems.filter(i => i.id !== id));
 - Combine `useReducer` with `useContext` for complex state.
 - Memoize provider values with `useMemo`.
 - Create custom hooks for easier consumption of context.
-- Do not overuse context; not a replacement for all state management.
 
 
 
