@@ -94,9 +94,10 @@ export default App;
 ---
 
 ## 4. Real-World Applications
-```jsx
+
 - **Authentication:** Store user info (token, role) in a global context.
 
+```jsx
   const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
