@@ -72,19 +72,19 @@ const [items, setItems] = useState([1,2,3]);
 ```
 
 1. Derived State
-   ```jsx
+ ```jsx
 const doubleCount = useMemo(() => count * 2, [count]);
 const total = useMemo(() => items.reduce((sum, i) => sum + i, 0), [items]);
-```
 
+```
  2. Prevent Re-Renders in Child Components
     ```jsx
 const memoizedValue = useMemo(() => ({ count }), [count]);
 // <ChildComponent data={memoizedValue} /> wrapped in React.memo prevents unnecessary renders
 ```
 
-// 3. Complex Object Creation
-```jsx
+ 3. Complex Object Creation
+   ```jsx
 const config = useMemo(() => ({ theme: 'dark', layout: 'grid' }), []);
 const expensiveArray = useMemo(() => new Array(1000).fill(0).map((_, i) => i*i), []);
 ```
