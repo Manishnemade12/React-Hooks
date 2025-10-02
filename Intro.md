@@ -44,20 +44,20 @@ function Counter() {
 
 ## 🔹 Pros of Hooks
 
-✅ Easier to understand than classes.
-✅ Reusable logic with **custom hooks**.
-✅ Cleaner and shorter code.
-✅ Better separation of concerns (logic grouped together).
-✅ Functional components + hooks are now the React standard.
+-✅ Easier to understand than classes.
+-✅ Reusable logic with **custom hooks**.
+-✅ Cleaner and shorter code.
+-✅ Better separation of concerns (logic grouped together).
+-✅ Functional components + hooks are now the React standard.
 
 ---
 
 ## 🔹 Cons of Hooks
 
-❌ Beginners may find dependency arrays (`useEffect`) confusing.
-❌ Overuse of `useMemo`/`useCallback` can make code complex.
-❌ Debugging hook order issues can be tricky.
-❌ Some developers prefer class lifecycle methods for clarity.
+-❌ Beginners may find dependency arrays (`useEffect`) confusing.
+-❌ Overuse of `useMemo`/`useCallback` can make code complex.
+-❌ Debugging hook order issues can be tricky.
+-❌ Some developers prefer class lifecycle methods for clarity.
 
 
 ---
