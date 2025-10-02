@@ -59,7 +59,7 @@ function Counter() {
 ❌ Debugging hook order issues can be tricky.
 ❌ Some developers prefer class lifecycle methods for clarity.
 
----
+
 
 
 ## 🔹 Basic Hooks
