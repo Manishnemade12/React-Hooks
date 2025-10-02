@@ -2,20 +2,6 @@
 
 A detailed guide on React's `useState` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
----
-
-## 📚 Table of Contents
-
-1. [What is useState?](#what-is-usestate)
-2. [How useState Works & Rendering Impact](#how-usestate-works--rendering-impact)
-3. [Syntax and Common Patterns](#syntax-and-common-patterns)
-4. [Real-World Applications](#real-world-applications)
-5. [Common Pitfalls & Fixes](#common-pitfalls--fixes)
-6. [Performance Considerations](#performance-considerations)
-7. [Best Practices](#best-practices)
-8. [Additional Resources](#additional-resources)
-
----
 
 ## 1. What is useState?
 
