@@ -2,20 +2,6 @@
 
 A detailed guide on React's `useReducer` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
----
-
-## 📚 Table of Contents
-
-1. [What is useReducer?](#what-is-usereducer)
-2. [How useReducer Works & Rendering Impact](#how-usereducer-works--rendering-impact)
-3. [Syntax and Common Patterns](#syntax-and-common-patterns)
-4. [Real-World Applications](#real-world-applications)
-5. [Combining useReducer with useContext](#combining-usereducer-with-usecontext)
-6. [Common Pitfalls & Fixes](#common-pitfalls--fixes)
-7. [Performance Considerations](#performance-considerations)
-8. [Best Practices](#best-practices)
-
----
 
 ## 1. What is useReducer?
 
@@ -141,25 +127,6 @@ function Counter() {
 }
 ```
 
----
-
-## 6. Common Pitfalls & Fixes
-
-- **Mutating State Directly:** Always return a new state object, do not mutate the old state.
-- **Complex Reducers:** Split into smaller reducers if it becomes too large.
-- **Overusing useReducer:** For simple states, `useState` is simpler and cleaner.
-- **Unnecessary Dispatches:** Avoid dispatching actions unnecessarily; can cause extra re-renders.
-
----
-
-## 7. Performance Considerations
-
-- Keep reducer logic pure and fast.
-- Memoize dispatch payloads or objects if they are complex.
-- Use separate reducers for unrelated states to reduce re-rendering.
-- Combine with `useContext` carefully to avoid re-rendering all consumers on small changes.
-
----
 
 ## 8. Best Practices
 
