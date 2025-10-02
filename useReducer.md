@@ -72,60 +72,37 @@ function Counter() {
 ```
 
 ---
+# Real-World useReducer Logic Examples
 
-## 4. Real-World Applications
+```javascript
+// Common initialState for different cases
+const initialState = {}; 
+const [state, dispatch] = useReducer(reducer, initialState);
 
-- **Form Handling:** Manage multiple inputs and validation states.
-- **Todo Apps:** Centralize add, remove, and update actions.
-- **Complex UI States:** Modal visibility, notifications, multi-step forms.
-- **Game State:** Track multiple variables like score, level, lives.
-- **Shopping Cart:** Add/remove items and calculate totals centrally.
+// 1. Form Handling
+dispatch({ type: 'update', field: 'name', value: 'John' });
+dispatch({ type: 'setError', errors: { email: 'Invalid' } });
+
+// 2. Todo Apps
+dispatch({ type: 'add', todo: newTodo });
+dispatch({ type: 'remove', id: 1 });
+dispatch({ type: 'update', id: 2, todo: { text: 'Updated' } });
+
+// 3. Complex UI States
+dispatch({ type: 'toggleModal' });
+dispatch({ type: 'nextStep' });
+dispatch({ type: 'notify', message: 'Saved!' });
+
+// 4. Game State
+dispatch({ type: 'score', points: 10 });
+dispatch({ type: 'levelUp' });
+dispatch({ type: 'loseLife' });
+
+// 5. Shopping Cart
+dispatch({ type: 'add', item: newItem });
+dispatch({ type: 'remove', id: 3 });
 
 ---
-
-## 5. Combining useReducer with useContext
-
-`useReducer` + `useContext` is a common pattern for global state management.
-
-```jsx
-import React, { createContext, useReducer, useContext } from 'react';
-
-const CounterContext = createContext();
-
-const initialState = { count: 0 };
-function reducer(state, action) {
-  switch (action.type) {
-    case 'increment': return { count: state.count + 1 };
-    case 'decrement': return { count: state.count - 1 };
-    default: return state;
-  }
-}
-
-export function CounterProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  return (
-    <CounterContext.Provider value={{ state, dispatch }}>
-      {children}
-    </CounterContext.Provider>
-  );
-}
-
-export function useCounter() {
-  return useContext(CounterContext);
-}
-
-// Usage in a component
-function Counter() {
-  const { state, dispatch } = useCounter();
-  return (
-    <>
-      <h1>Count: {state.count}</h1>
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-    </>
-  );
-}
-```
 
 
 ## 8. Best Practices
@@ -136,6 +113,27 @@ function Counter() {
 - Combine with `useContext` for global state management.
 - Avoid large monolithic reducers; split if necessary.
 - Comment and document action types for clarity.
+
+```jsx
+// 1. Keep reducer pure & centralized
+function reducer(state, action) {
+  switch(action.type) {
+    case 'increment': return { count: state.count + 1 };
+    case 'decrement': return { count: state.count - 1 };
+    default: return state; // always return new state
+  }
+}
+
+// 2. Setup global state with useReducer + useContext
+const [state, dispatch] = useReducer(reducer, { count: 0 });
+const { state: ctxState, dispatch: ctxDispatch } = useContext(CounterContext);
+
+// 3. Dispatch actions with type (and optional payload)
+ctxDispatch({ type: 'increment' });
+ctxDispatch({ type: 'decrement' });
+
+```
+
 
 ---
 
