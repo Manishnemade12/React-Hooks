@@ -12,55 +12,23 @@ React Hooks were introduced in **React 16.8** to let developers use **state** an
 
 ---
 
-
-## 🔹 How Hooks Work
-
-* React keeps an **internal list** of hook states.
-* When a component renders, React runs hooks **in the same order** each time.
-* Example:
-
-```jsx
-function Counter() {
-  const [count, setCount] = React.useState(0);
-  // React remembers 'count' for this component
-
-  return (
-    <button onClick={() => setCount(count + 1)}>
-      Count: {count}
-    </button>
-  );
-}
-```
-
-* Here:
-
-  * `count` is the **current state**.
-  * `setCount` is the **function to update it**.
-  * Each time state updates, React re-renders the component.
-
----
-
-
-
 ## 🔹 Pros of Hooks
 
--✅ Easier to understand than classes.
--✅ Reusable logic with **custom hooks**.
--✅ Cleaner and shorter code.
--✅ Better separation of concerns (logic grouped together).
--✅ Functional components + hooks are now the React standard.
+- Easier to understand than classes.  
+- Reusable logic with **custom hooks**.  
+- Cleaner and shorter code.  
+- Better separation of concerns (logic grouped together).  
+- Functional components + hooks are now the React standard.  
 
 ---
 
 ## 🔹 Cons of Hooks
 
--❌ Beginners may find dependency arrays (`useEffect`) confusing.
--❌ Overuse of `useMemo`/`useCallback` can make code complex.
--❌ Debugging hook order issues can be tricky.
--❌ Some developers prefer class lifecycle methods for clarity.
+- Beginners may find dependency arrays (`useEffect`) confusing.  
+- Overuse of `useMemo`/`useCallback` can make code complex.  
+- Debugging hook order issues can be tricky.  
+- Some developers prefer class lifecycle methods for clarity.  
 
-
----
 
 ## 🔹 Basic Hooks
 
