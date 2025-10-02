@@ -12,37 +12,6 @@ React Hooks were introduced in **React 16.8** to let developers use **state** an
 
 ---
 
-## 🔹 Why React Hooks?
-
-### Problems Before Hooks
-
-* State and lifecycle only worked in class components.
-* Complex logic was spread across multiple lifecycle methods.
-* Code reuse between components was hard (mixins, HOCs, render props).
-* Class components were verbose and sometimes confusing.
-
-### How Hooks Solve These
-
-* **Functional + Stateful** → Functional components can now manage state.
-* **Reusability** → We can create **custom hooks** and share logic easily.
-* **Cleaner Code** → Less boilerplate compared to classes.
-* **Better Readability** → Logic grouped by purpose instead of lifecycle methods.
-
----
-
-## 🔹 Rules of Hooks
-
-1. **Only call hooks at the top level**
-
-   * Never inside loops, conditions, or nested functions.
-   * Ensures hooks run in the same order every render.
-
-2. **Only call hooks inside React functions**
-
-   * Functional components or custom hooks.
-   * Not in regular JavaScript functions.
-
----
 
 ## 🔹 How Hooks Work
 
@@ -143,14 +112,6 @@ useEffect(() => {
 * Want **cleaner code** with fewer files/classes.
 
 ---
-
-## 🔹 Summary
-
-* React Hooks let you use **state, side effects, refs, context, and performance optimizations** inside functional components.
-* They make code **cleaner, reusable, and more modern**.
-* Core hooks include `useState`, `useEffect`, and `useContext`.
-* Advanced hooks like `useReducer`, `useMemo`, and `useCallback` help with more complex needs.
-* Hooks are now the **recommended way** to write React components.
 
 ---
 
