@@ -75,6 +75,45 @@ export default Parent;
 - **Integration with custom hooks:** Ensures stable function references.
 - **Performance optimization in lists:** Prevents creating new functions for each item in mapping.
 
+
+```jsx
+//1. Passing callbacks to memoized children
+const Child = React.memo(({ onClick }) => (
+  <button onClick={onClick}>Click</button>
+));
+
+const handleClick = useCallback(() => {
+  console.log("Clicked");
+}, []); // stable reference prevents unnecessary re-renders
+
+
+//2. Event handlers in complex components
+
+const handleInputChange = useCallback((e) => {
+  setValue(e.target.value);
+}, []); // avoids recreating function on every render
+
+
+//3. Integration with custom hooks
+
+function useCustomHook(callback) {
+  useEffect(() => {
+    callback();
+  }, [callback]); // ensures stable function reference
+}
+
+useCustomHook(handleClick);
+
+
+//4. Performance optimization in lists
+
+const items = [1,2,3];
+const handleItemClick = useCallback((id) => {
+  console.log("Item", id);
+}, []); // prevents creating new function for each item
+
+items.map(item => <button key={item} onClick={() => handleItemClick(item)}>{item}</button>);
+```
 ---
 
 ## 7. Best Practices
