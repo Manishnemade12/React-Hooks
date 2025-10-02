@@ -2,20 +2,6 @@
 
 A detailed guide on React's `useContext` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
----
-
-## 📚 Table of Contents
-
-1. [What is useContext?](#what-is-usecontext)
-2. [How useContext Works & Rendering Impact](#how-usecontext-works--rendering-impact)
-3. [Syntax and Common Patterns](#syntax-and-common-patterns)
-4. [Real-World Applications](#real-world-applications)
-5. [Combining useContext with useReducer](#combining-usecontext-with-usereducer)
-6. [Common Pitfalls & Fixes](#common-pitfalls--fixes)
-7. [Performance Considerations](#performance-considerations)
-8. [Best Practices](#best-practices)
-
----
 
 ## 1. What is useContext?
 
