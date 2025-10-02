@@ -1,4 +1,4 @@
-# useEffect — Complete Deep Research
+# useEffect
 
 > A detailed guide on React's `useEffect` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
