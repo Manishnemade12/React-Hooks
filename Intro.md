@@ -42,13 +42,5 @@ React Hooks were introduced in **React 16.8** to let developers use **state** an
 
 4. **[useReducer](./useReducer.md)** – Manages complex state logic using a reducer function.
 5. **[useMemo](./useMemo.md)** – Memoizes computed values to optimize performance.
-6. **[useRef](./useRef.md)** – Holds mutable values across renders without causing re-renders.
----
-
-## 🔹 Custom Hooks
-
-* A **Custom Hook** is any function that starts with `use` and calls other hooks.
-* Example: `useFetch`, `useWindowWidth`, `useLocalStorage`.
-* They let you **reuse logic** between components.
-
+6. **[useRef](./useCallback.md)** – Memoizes computed function.
 ---
