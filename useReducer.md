@@ -1,4 +1,4 @@
-# useReducer — Complete Deep Research
+# useReducer
 
 A detailed guide on React's `useReducer` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
