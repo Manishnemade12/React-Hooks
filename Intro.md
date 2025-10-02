@@ -1,4 +1,4 @@
-# React Hooks - Complete Guide
+# React Hooks 
 
 React Hooks were introduced in **React 16.8** to let developers use **state** and other React features inside **functional components**. Before hooks, only **class components** could use state and lifecycle methods. Hooks make React code **simpler, reusable, and more powerful**.
 
