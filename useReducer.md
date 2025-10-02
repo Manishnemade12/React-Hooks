@@ -79,29 +79,39 @@ function Counter() {
 const initialState = {}; 
 const [state, dispatch] = useReducer(reducer, initialState);
 
-// 1. Form Handling
+```
+
+1. Form Handling
+
+```javascript
 dispatch({ type: 'update', field: 'name', value: 'John' });
 dispatch({ type: 'setError', errors: { email: 'Invalid' } });
 
-// 2. Todo Apps
+```
+
+2. Todo Apps
+```javascript
 dispatch({ type: 'add', todo: newTodo });
 dispatch({ type: 'remove', id: 1 });
 dispatch({ type: 'update', id: 2, todo: { text: 'Updated' } });
 
-// 3. Complex UI States
+```
+
+ 3. Complex UI States
+```javascript
 dispatch({ type: 'toggleModal' });
 dispatch({ type: 'nextStep' });
 dispatch({ type: 'notify', message: 'Saved!' });
 
-// 4. Game State
+```
+
+4. Game State
+```javascript
 dispatch({ type: 'score', points: 10 });
 dispatch({ type: 'levelUp' });
 dispatch({ type: 'loseLife' });
 
-// 5. Shopping Cart
-dispatch({ type: 'add', item: newItem });
-dispatch({ type: 'remove', id: 3 });
-
+```
 ---
 
 
