@@ -4,19 +4,6 @@ A detailed guide on React's `useCallback` hook: how it works, its effect on rend
 
 ---
 
-## 📚 Table of Contents
-
-1. [What is useCallback?](#what-is-usecallback)
-2. [How useCallback Works & Rendering Impact](#how-usecallback-works--rendering-impact)
-3. [Syntax and Common Patterns](#syntax-and-common-patterns)
-4. [Real-World Applications](#real-world-applications)
-5. [Common Pitfalls & Fixes](#common-pitfalls--fixes)
-6. [Performance Considerations](#performance-considerations)
-7. [Best Practices](#best-practices)
-8. [Additional Resources](#additional-resources)
-
----
-
 ## 1. What is useCallback?
 
 `useCallback` is a React Hook that **memoizes a function**.  
@@ -90,31 +77,31 @@ export default Parent;
 
 ---
 
-## 5. Common Pitfalls & Fixes
-
-- **Overusing useCallback:** Memoizing trivial functions may add overhead.
-- **Incorrect Dependencies:** Missing dependencies can lead to stale values.
-- **Misunderstanding Memoization:** `useCallback` only memoizes the function reference, not the result.
-- **Not Needed Without React.memo:** If the function is not passed to memoized children, `useCallback` often isn’t needed.
-
----
-
-## 6. Performance Considerations
-
-- Only memoize functions that are passed as props or are expensive to recreate.
-- Combine with `React.memo` to maximize benefit.
-- Ensure dependency array is accurate to avoid stale closures.
-- Avoid using `useCallback` for very simple components or handlers; React is already fast.
-
----
-
 ## 7. Best Practices
 
 - Use `useCallback` for functions passed to memoized children.
 - Keep dependency arrays minimal and correct.
 - Combine with `useMemo` if you also need to memoize the result of the function.
-- Comment when intentionally omitting dependencies.
-- Avoid over-optimization; only use when measurable performance benefit is expected.
+
+
+# ✅ useCallback & useMemo Best Practices Example
+
+## 1. Use `useCallback` for functions passed to memoized children
+```jsx
+const increment = useCallback(() => {
+  setCount(prev => prev + 1);
+}, []); // dependency array minimal and correct
+
+
+// Only include variables that the callback actually uses
+const multiply = useCallback(() => count * multiplier, [count, multiplier]);
+
+//Combine with useMemo if you also need to memoize the result
+const computedValue = useMemo(() => {
+  return count * multiplier;
+}, [count, multiplier]); // recompute only when count or multiplier changes
+
+```
 
 ---
 
