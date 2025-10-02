@@ -60,7 +60,7 @@ function Counter() {
 ❌ Some developers prefer class lifecycle methods for clarity.
 
 
-
+---
 
 ## 🔹 Basic Hooks
 
