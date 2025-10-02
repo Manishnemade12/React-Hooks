@@ -40,5 +40,5 @@ React Hooks were introduced in **React 16.8** to let developers use **state** an
 
 4. **[useReducer](./useReducer.md)** – Manages complex state logic using a reducer function.
 5. **[useMemo](./useMemo.md)** – Memoizes computed values to optimize performance.
-6. **[useRef](./useCallback.md)** – Memoizes computed function.
+6. **[useCallback](./useCallback.md)** – Memoizes computed function.
 ---
