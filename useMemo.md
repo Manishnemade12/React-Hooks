@@ -98,7 +98,7 @@ const expensiveArray = useMemo(() => new Array(1000).fill(0).map((_, i) => i*i),
 - Avoid using it for simple calculations, which are cheaper than memoization overhead.
 - Combine with `useCallback` when memoizing functions.
 
-## useMemo Best Practices - Logical Snippet
+## useMemo Best Practices 
 
 ```jsx
 import { useMemo, useCallback } from "react";
