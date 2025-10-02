@@ -120,17 +120,6 @@ useEffect(() => {
 
 ---
 
-## Cleanup Functions
-
-Always return a cleanup function for:
-
-* Subscriptions
-* Timers / intervals
-* Event listeners
-* Abort controllers
-
-This prevents memory leaks and ensures effects don’t duplicate work.
-
 
 ## Best Practices
 
