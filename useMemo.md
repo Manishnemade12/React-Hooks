@@ -124,7 +124,7 @@ const value = useMemo(() => compute(), []); // intentional: only once
 ```
 ---
 
-## 8. Additional Resources
+## 6  Additional Resources
 
 - [React Docs: useMemo](https://react.dev/reference/react/useMemo)
 - [React Docs: Optimizing Performance](https://react.dev/learn/optimizing-performance)
