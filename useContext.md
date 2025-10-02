@@ -94,18 +94,53 @@ export default App;
 ---
 
 ## 4. Real-World Applications
-
-- **Theme Switching:** Light/dark mode management globally.
+```jsx
 - **Authentication:** Store user info (token, role) in a global context.
+
+  const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState({ token: null, role: null });
+  const login = (token, role) => setUser({ token, role });
+  const logout = () => setUser({ token: null, role: null });
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+```
+
 - **Localization:** Language selection accessible across components.
-- **Settings / Configs:** App-wide configuration settings.
+```jsx
+  const LocaleContext = createContext();
+
+export const LocaleProvider = ({ children }) => {
+  const [language, setLanguage] = useState("en"); // default: English
+  const switchLanguage = (lang) => setLanguage(lang);
+
+  return (
+    <LocaleContext.Provider value={{ language, switchLanguage }}>
+      {children}
+    </LocaleContext.Provider>
+  );
+};
+```
+
 - **Shopping Cart:** Share cart items state across multiple components.
+```jsx
+  // manage cart items
+const [cartItems, setCartItems] = useState([]);
+const addItem = (item) => setCartItems([...cartItems, item]);
+const removeItem = (id) => setCartItems(cartItems.filter(i => i.id !== id));
+```
 
 ---
 
 
 
-## 8. Best Practices
+## 5. Best Practices
 
 - Use context only for global/shared state.
 - Avoid frequent changes in context value to prevent unnecessary re-renders.
