@@ -102,14 +102,15 @@ useEffect(() => {
 
 * Manages complex state transitions (alternative to `useState`).
 
-### 5. `useRef`
+### 5. `useMemo`
+
+* Optimize performance by memoizing values and functions.
+  
+### 6. `useRef`
 
 * Stores mutable values that don’t cause re-renders.
 * Commonly used for accessing DOM nodes.
 
-### 6. `useMemo` & `useCallback`
-
-* Optimize performance by memoizing values and functions.
 
 ---
 
@@ -131,25 +132,6 @@ useEffect(() => {
 ❌ Some developers prefer class lifecycle methods for clarity.
 
 ---
-
-## 🔹 Custom Hooks
-
-* A **custom hook** is just a JavaScript function that uses other hooks.
-* Lets you extract and reuse component logic.
-
-```jsx
-function useWindowWidth() {
-  const [width, setWidth] = useState(window.innerWidth);
-  
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return width;
-}
-```
 
 ---
 
@@ -184,9 +166,7 @@ function useWindowWidth() {
 
 4. **[useReducer](./useReducer.md)** – Manages complex state logic using a reducer function.
 5. **[useMemo](./useMemo.md)** – Memoizes computed values to optimize performance.
-6. **[useCallback](./useCallback.md)** – Memoizes functions to prevent unnecessary re-renders.
-7. **[useRef](./useRef.md)** – Holds mutable values across renders without causing re-renders.
-8. **[useImperativeHandle](./useImperativeHandle.md)** – Customizes the instance value that is exposed when using `ref`.
+6. **[useRef](./useRef.md)** – Holds mutable values across renders without causing re-renders.
 ---
 
 ## 🔹 Custom Hooks
