@@ -18,8 +18,6 @@ React Hooks were introduced in **React 16.8** to let developers use **state** an
 - Reusable logic with **custom hooks**.  
 - Cleaner and shorter code.  
 - Better separation of concerns (logic grouped together).  
-- Functional components + hooks are now the React standard.  
-
 ---
 
 ## 🔹 Cons of Hooks
