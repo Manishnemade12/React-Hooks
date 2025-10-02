@@ -1,4 +1,4 @@
-# useState — Complete Deep Research
+# useState 
 
 A detailed guide on React's `useState` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
@@ -64,27 +64,7 @@ setState(prevState => prevState + 1);
 
 ---
 
-## 5. Common Pitfalls & Fixes
-
-- **State Not Updating Immediately:** State updates are asynchronous.
-  - *Fix:* Use the updated value in a `useEffect` or callback.
-- **Stale State in Closures:** Use functional updates to access the latest state.
-- **Multiple State Updates:** React may batch updates; use functional updates if new state depends on previous state.
-
----
-
-## 6. Performance Considerations
-
-- Keep state as local as possible.
-- Avoid storing derived values in state; compute them during render.
-- For expensive initial state, use a function:  
-  ```jsx
-  const [value, setValue] = useState(() => computeExpensiveValue());
-  ```
-
----
-
-## 7. Best Practices
+## 5. Best Practices
 
 - Use separate state variables for unrelated data.
 - Use objects or arrays for grouped state, but update immutably.
@@ -93,7 +73,7 @@ setState(prevState => prevState + 1);
 
 ---
 
-## 8. Additional Resources
+## 6. Additional Resources
 
 - [React Docs: useState](https://react.dev/reference/react/useState)
 - [React Docs: State: A Component’s Memory](https://react.dev/learn/state-a-components-memory)
