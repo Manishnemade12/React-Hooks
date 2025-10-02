@@ -121,8 +121,7 @@ dispatch({ type: 'loseLife' });
 - Use action objects with type and optional payload.
 - Centralize related state updates into one reducer.
 - Combine with `useContext` for global state management.
-- Avoid large monolithic reducers; split if necessary.
-- Comment and document action types for clarity.
+
 
 ```jsx
 // 1. Keep reducer pure & centralized
