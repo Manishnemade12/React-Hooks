@@ -79,25 +79,6 @@ useEffect(() => {
 
 ## Real-World Applications
 
-### Data Fetching
-
-```jsx
-useEffect(() => {
-  const controller = new AbortController();
-  async function fetchData() {
-    try {
-      const res = await fetch(`/api/data?query=${query}`, { signal: controller.signal });
-      const data = await res.json();
-      setData(data);
-    } catch (err) {
-      if (err.name !== 'AbortError') setError(err);
-    }
-  }
-  fetchData();
-  return () => controller.abort();
-}, [query]);
-```
-
 ### Event Listeners
 
 ```jsx
@@ -112,11 +93,25 @@ useEffect(() => {
 ### Subscriptions / WebSockets
 
 ```jsx
-useEffect(() => {
-  const socket = new WebSocket(url);
-  socket.addEventListener('message', handleMessage);
-  return () => socket.close();
-}, [url]);
+function MyComponent({ url }) {
+  const [messages, setMessages] = useState([]); // State to store all incoming messages
+
+  // Function that runs every time a message is received from the server
+  const handleMessage = (event) => {
+    setMessages((prev) => [...prev, event.data]); // Add new message to state
+  };
+
+  useEffect(() => {
+    const socket = new WebSocket(url);                 // Create a new WebSocket connection
+    socket.addEventListener("message", handleMessage); // Attach message listener
+
+    return () => socket.close(); // Cleanup: close the WebSocket when component unmounts or URL changes
+  }, [url]);
+
+  // Normally the UI would go here, but only logic is needed
+  return null;
+}
+
 ```
 
 ### Timers / Debouncing
