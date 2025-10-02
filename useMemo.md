@@ -2,21 +2,6 @@
 
 A detailed guide on React's `useMemo` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
----
-
-## 📚 Table of Contents
-
-1. [What is useMemo?](#what-is-usememo)
-2. [How useMemo Works & Rendering Impact](#how-usememo-works--rendering-impact)
-3. [Syntax and Common Patterns](#syntax-and-common-patterns)
-4. [Real-World Applications](#real-world-applications)
-5. [Common Pitfalls & Fixes](#common-pitfalls--fixes)
-6. [Performance Considerations](#performance-considerations)
-7. [Best Practices](#best-practices)
-8. [Additional Resources](#additional-resources)
-
----
-
 ## 1. What is useMemo?
 
 `useMemo` is a React Hook that **memoizes expensive computations**.  
@@ -78,38 +63,63 @@ const filteredItems = useMemo(() => {
 
 ## 4. Real-World Applications
 
-- **Expensive Computations:** Calculations, data processing, sorting, filtering large arrays.
-- **Derived State:** Compute derived values from state efficiently.
-- **Prevent Re-Renders in Child Components:** Use memoized values as props to `React.memo` components.
-- **Complex Object Creation:** Avoid creating new object/array references unnecessarily.
+```jsx
+import { useMemo } from "react";
+
+// Common state
+const [count, setCount] = useState(0);
+const [items, setItems] = useState([1,2,3]);
+```
+
+1. Derived State
+   ```jsx
+const doubleCount = useMemo(() => count * 2, [count]);
+const total = useMemo(() => items.reduce((sum, i) => sum + i, 0), [items]);
+```
+
+ 2. Prevent Re-Renders in Child Components
+    ```jsx
+const memoizedValue = useMemo(() => ({ count }), [count]);
+// <ChildComponent data={memoizedValue} /> wrapped in React.memo prevents unnecessary renders
+```
+
+// 3. Complex Object Creation
+```jsx
+const config = useMemo(() => ({ theme: 'dark', layout: 'grid' }), []);
+const expensiveArray = useMemo(() => new Array(1000).fill(0).map((_, i) => i*i), []);
+```
 
 ---
 
-## 5. Common Pitfalls & Fixes
-
-- **Overusing useMemo:** Not all calculations need memoization; small computations may add overhead.
-- **Incorrect Dependencies:** Missing dependencies can cause stale or incorrect values.
-- **Misunderstanding Memoization:** `useMemo` does not prevent re-renders—it only memoizes the value.
-- **Reference Equality:** Always memoize objects/arrays to prevent unnecessary child re-renders.
-
----
-
-## 6. Performance Considerations
-
-- Only memoize expensive computations.
-- Ensure dependencies are minimal and accurate.
-- Avoid recomputing on every render by caching derived data.
-- Combine with `React.memo` for child component optimization.
-
----
-
-## 7. Best Practices
+## 5. Best Practices
 
 - Use `useMemo` for performance optimization, not for controlling render logic.
 - Keep dependency arrays precise to prevent bugs.
 - Avoid using it for simple calculations, which are cheaper than memoization overhead.
 - Combine with `useCallback` when memoizing functions.
-- Comment when intentionally omitting dependencies in advanced scenarios.
+
+## useMemo Best Practices - Logical Snippet
+
+```jsx
+import { useMemo, useCallback } from "react";
+
+// 1. Performance optimization only
+const expensiveValue = useMemo(() => heavyCalculation(data), [data]);
+
+// 2. Keep dependencies precise
+const filteredItems = useMemo(() => items.filter(i => i.active), [items]);
+
+// 3. Avoid for simple calculations
+const sum = a + b; // no useMemo needed
+
+// 4. Combine with useCallback for functions
+const memoizedHandler = useCallback(() => {
+  console.log('Handled!');
+}, [dependency]);
+
+// 5. Comment when intentionally omitting dependencies
+const value = useMemo(() => compute(), []); // intentional: only once
+
 
 ---
 
