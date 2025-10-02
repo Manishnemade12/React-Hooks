@@ -150,4 +150,13 @@ const removeItem = (id) => setCartItems(cartItems.filter(i => i.id !== id));
 - Create custom hooks for easier consumption of context.
 - Do not overuse context; not a replacement for all state management.
 
+
+
+```jsx
+// Complex state with useReducer + global sharing with useContext
+const [state, dispatch] = useReducer(reducer, initialState);
+
+// Memoize provider value to avoid unnecessary re-renders
+const value = useMemo(() => ({ state, dispatch }), [state]);
+```
 ---
