@@ -1,4 +1,4 @@
-# useRef — Complete Deep Research
+# useRef 
 
 A detailed guide on React's `useRef` hook: how it works, its effect on rendering, real-world applications, and best practices.
 
@@ -118,7 +118,6 @@ const usePrevious = (value) => {
 - **Don't read/write refs during rendering** - do it in event handlers or effects.
 - **Use refs for DOM access** when you need to imperatively control elements.
 - **Store mutable values** that don't affect the visual output.
-- **Avoid overusing refs** - prefer state for values that affect rendering.
 
 ```jsx
 // ❌ Don't do this - mutating ref during render
