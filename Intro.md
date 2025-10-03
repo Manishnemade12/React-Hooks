@@ -27,8 +27,8 @@ React Hooks were introduced in **React 16.8** to let developers use **state** an
 4. **[useReducer](./useReducer.md)** – Manages complex state logic using a reducer function.
 5. **[useMemo](./useMemo.md)** – Memoizes computed values to optimize performance.
 6. **[useCallback](./useCallback.md)** – Memoizes computed function.
-7. **[useRef](./useRef.md)**
-8. **[useDebugValue](./useDebugValue.md)**  
-9. **[useDeferredValue](./useDeferredValue.md)**  
-10. **[useID](./useID.md)**   
+7. **[useRef](./useRef.md)** - Holds mutable values or DOM references without re-render.
+8. **[useDebugValue](./useDebugValue.md)** -Displays debug info for custom hooks in DevTools.  
+9. **[useDeferredValue](./useDeferredValue.md)** -Delays updating a value to keep UI responsive.
+10. **[useID](./useID.md)** -Generates unique and stable IDs for accessibility and forms
 ---
