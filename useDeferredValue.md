@@ -98,7 +98,7 @@ const deferredIsHovered = useDeferredValue(isHovered);
 
 ## 5. Best Practices
 
-- **Pair with `useState` or `useReducer`:** `useDeferredValue` works by taking a regular state value and returning a deferred version.
+- **Pair with `useState` or `useReducer`:** gives a deferred version of a state.
 - **Use for computationally intensive tasks:** It's most beneficial when you have a value that triggers an expensive re-render, and you want to prioritize other updates.
 - **Avoid using for critical, time-sensitive updates:** If an update needs to be immediate and cannot tolerate any delay, `useDeferredValue` is not the right choice.
 
