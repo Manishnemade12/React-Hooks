@@ -12,20 +12,6 @@ React Hooks were introduced in **React 16.8** to let developers use **state** an
 
 ---
 
-## 🔹 Pros of Hooks
-
-- Easier to understand than classes.  
-- Reusable logic with **custom hooks**.  
-- Cleaner and shorter code.  
-- Better separation of concerns (logic grouped together).  
----
-
-## 🔹 Cons of Hooks
-
-- Beginners may find dependency arrays (`useEffect`) confusing.  
-- Overuse of `useMemo`/`useCallback` can make code complex.  
-- Debugging hook order issues can be tricky.  
-- Some developers prefer class lifecycle methods for clarity.  
 
 
 ## 🔹 Basic Hooks
