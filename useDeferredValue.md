@@ -33,22 +33,33 @@ A detailed guide on React's `useDeferredValue` hook: how it works, its effect on
 ### Basic useDeferredValue Syntax
 
 ```jsx
-import React, { useState, useDeferredValue } from 'react';
+import React, { useState, useDeferredValue } from "react";
 
-const MyComponent = () => {
-  const [query, setQuery] = useState('');
-  const deferredQuery = useDeferredValue(query);
+function SearchList({ items }) {
+  const [search, setSearch] = useState("");
+  const deferredSearch = useDeferredValue(search); // Low-priority value
 
-  // Use 'query' for immediate feedback (e.g., input field)
-  // Use 'deferredQuery' for potentially expensive operations (e.g., filtering a list)
-  
+  const filteredItems = items.filter(item =>
+    item.toLowerCase().includes(deferredSearch.toLowerCase())
+  );
+
   return (
     <div>
-      <input value={query} onChange={e => setQuery(e.target.value)} />
-      <ExpensiveList query={deferredQuery} />
+      <input
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Type to search..."
+      />
+      <ul>
+        {filteredItems.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
-};
+}
+
+export default SearchList;
 ```
 
 
