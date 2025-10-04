@@ -47,12 +47,39 @@ function Counter() {
 }
 ```
 
+
+
+```jsx
+
+function Parent() {
+  return (
+    <div>
+      <Counter />   {/* Has its own state */}
+      <Message />   {/* Just shows text */}
+    </div>
+  );
+}
+
+function Counter() {
+  const [count, setCount] = React.useState(0);
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+
+function Message() {
+  console.log("Message rendered");
+  return <p>Hello!</p>;
+}
+```
+
 ### Functional Updates
 
 ```jsx
 setState(prevState => prevState + 1);
 ```
-
 ---
 
 ## 4. Real-World Applications
