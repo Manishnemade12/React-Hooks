@@ -140,13 +140,7 @@ useEffect(() => {
 
 ```
 
-* Use `useLayoutEffect` only when you need synchronous DOM measurements.
-```jsx
-  useLayoutEffect(() => {
-  const w = ref.current.offsetWidth;
-}, []);
 
-```
 
 * Convert repeated/complex effects into custom hooks.
 ```jsx
